@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Sako's Contacts",
+    "name": "contacts-list",
     "description": "Contacts App just like any other one",
-    "slug": "snack-ryMUWQ5pz",
-    "privacy": "public",
+    "slug": "snack-HkNvQMGAz",
+    "privacy": "unlisted",
     "sdkVersion": "27.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,8 +21,8 @@
         "xml"
       ]
     },
-    "android":{
-      "package": "com.sykodevs.contactlist"
+    "ios": {
+      "supportsTablet": true
     }
   }
 }

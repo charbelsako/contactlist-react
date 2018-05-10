@@ -1,18 +1,19 @@
-import {Component} from 'react'
-import {TextInput, KeyboardAvoidingView, StyleSheet} from 'react-native'
-import PropTypes from 'prop-types'
+import React from 'react'
+import {KeyboardAvoidingView, StyleSheet, TextInput, Button, TouchableOpacity, Text} from 'react-native'
 import {Constants} from 'expo'
+import PropTypes from 'prop-types'
+
 
 const styles = StyleSheet.create({
     input: {padding: 20, borderColor: 'black', borderWidth: 1, },
     container: {
         flex: 1,
-        paddingTop: Contstant.statusBarHeight,
+        paddingTop: Constants.statusBarHeight,
         justifyContent: 'center',
-    }
+    },
 })
 
-export default class AddContactForm extends Component{
+export default class AddContactForm extends React.Component{
     static propTypes = {
         addContact: PropTypes.func,
     }
@@ -40,24 +41,17 @@ export default class AddContactForm extends Component{
     //as it says
     validateForm = () => {
         //this is not what he did
-        if (+this.state.phone >= 0 && this.state.phone.length <= 8 && this.state.name.length >= 2){
+        if (+this.state.phone >= 0 && this.state.phone.length == 8 && this.state.name.length >= 3){
             return this.setState({isFormValid: true})
         }else{
-            return this.setState({isFormValid: true})
+            return this.setState({isFormValid: false})
         }
     }
 
     handleSubmit = () => {
         this.props.onSubmit(this.state)
     }
-
-    //a helper function to hide the form
-    hideForm = () => {
-        this.setState({
-            showForm: false,
-        })
-    }
-
+  
     render(){
         return (
             <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -75,8 +69,8 @@ export default class AddContactForm extends Component{
                     keyboardType="numeric"
                     placeholder="Enter Phone Number"
                 />
-                <Button title="Submit" onPress={this.handleSubmit} disabled={this.state.isFormValid}/>
-                <Button title="Cancel" onPress={this.hideForm} />
+                
+                <Button title="Submit" onPress={this.handleSubmit} disabled={!this.state.isFormValid}/>
             </KeyboardAvoidingView>
         )
     }
