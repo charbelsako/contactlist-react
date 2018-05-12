@@ -20,10 +20,10 @@ const styles = {
 }
 
 export default class ContactsListScreen extends React.Component{
-  static navigationOptions = {
+  static navigationOptions = ({navigation}) => ({
     headerTitle: 'Contacts',
-    
-  }
+    headerRight: <Button onPress={() => {navigation.navigate('AddContact')}} title="Add" />,
+  })
   
   state = {
     showContacts: true,

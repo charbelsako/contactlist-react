@@ -2,15 +2,15 @@
   "name": "contacts-list",
   "version": "0.0.0",
   "description": "Contacts App just like any other one",
-  "author": null,
-  "private": true,
+  "author": "Charbel Sarkis",
+  "private": false,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
+    "@expo/vector-icons": "6.2.1",
     "expo": "^27.0.0",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
-    "@expo/vector-icons": "6.2.1",
     "react-native-elements": "0.18.5",
-    "react-navigation": "2.0.1"
+    "react-navigation": "^2.0.1"
   }
 }
