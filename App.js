@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {TouchableOpacity, Button, SectionList, TextInput, StyleSheet, Text, View} from 'react-native'
+import {TouchableOpacity} from 'react-native'
 import {Constants} from 'expo'
 
 import contacts, { compareNames } from './contacts'
@@ -13,10 +13,6 @@ const AppNavigator = createStackNavigator({
   
 }, {
   initialRouteName: "ContactList",
-})
-
-const styles = StyleSheet.create({
-    
 })
 
 export default class App extends Component {
